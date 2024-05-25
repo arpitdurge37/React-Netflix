@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix | Watch Movies</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+
+    <style type="text/css">
+         body {
+             background-size: cover;
+         }
+         #root {
+            background-color: rgba(0,0,0,0.6);
+            height: 100vh;
+         }
+         .brand-name {
+            text-shadow: 2px 2px 2px white;
+         }
+         section {
+            text-align: center;
+            color:white;
+            margin-top: 100px;
+         }
+         .section-title {
+             font-family: Arial;
+             font-size: 50px;
+             font-weight: bold;
+         }
+         .section-subtitle {
+            font-family: Arial;
+            font-size: 20px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+         }
+    </style>
+
+    <script src="../node_modules/react/umd/react.development.js"></script>
+    <script src="../node_modules/react-dom/umd/react-dom.development.js"></script>
+    <script src="../node_modules/@babel/standalone/babel.js"></script>
+    <script type="text/babel">
+          function NetflixIndex(){
+               return(
+                 <div>
+                      <NetflixHeader />
+                      <NetflixSection />
+                 </div>
+               )
+          }
+
+          function NetflixHeader(){
+              return(
+                <header className="p-4 d-flex justify-content-between">
+                    <div className="text-danger h1 brand-name"> NETFLIX </div>
+                    <div>
+                        <div className="input-group">
+                            <span className="bi bi-translate input-group-text"></span> 
+                            <select class="form-select"> 
+                                <option>Language</option>
+                                <option>English</option> 
+                                <option>हिंदी</option>
+                            </select>
+                            <button className="btn btn-danger ms-2">Sigin</button>
+                        </div>
+                    </div>
+                </header>
+              )
+          }
+
+          function NetflixSection(){
+             return(
+                <section className="d-flex justify-content-center">
+                    <div className="w-50">
+                        <div className="section-title">Unlimited movies, TV shows and more</div>
+                        <div className="section-subtitle"> Starts at ₹149. Cancel anytime. </div>
+                        <div>
+                            <NetflixMain />
+                        </div>
+                    </div>
+                </section>
+             )
+          }
+
+          function NetflixMain(){
+               return(
+                <main>
+                   <p>Ready to watch? Enter your email to create or restart your membership.</p>
+                   <form className="input-group input-group-lg">
+                      <input type="email" className="form-control" />
+                      <button className="btn btn-danger"> Get Started <span className="bi bi-chevron-right"></span> </button>
+                   </form>
+               </main>
+               )
+          }
+
+         ReactDOM.render(<NetflixIndex />, document.getElementById("root"));
+    </script>
+</head>
+<body background="./public/images/netflix-banner.jpg">
+    <noscript> Please enable Javascript </noscript>
+    <div id="root"></div>
+</body>
+</html>
